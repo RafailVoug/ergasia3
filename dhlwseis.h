@@ -16,7 +16,6 @@
 #define NUM_PRODUCTS 20
 #define NUM_CUSTOMERS 5
 #define ORDERS_PER_CUSTOMER 10
-#define PORT_BASE 5000
 
 typedef struct {
     char name[20];
@@ -30,7 +29,7 @@ void initialize_catalog(Product catalog[]) {
     for (int i = 0; i < NUM_PRODUCTS; i++) {
         sprintf(catalog[i].name, "Product %d", i + 1);
         catalog[i].price = (rand() % 1000) / 10.0;
-        catalog[i].item_count = rand() % 10; // Randomize item counts for t
+        catalog[i].item_count = rand() % 10 + 1; // Randomize item counts
         catalog[i].requests = 0;
         catalog[i].sold = 0;
     }
